@@ -1,17 +1,44 @@
-<div style="text-align:center; background:#222; color:white; padding:50px; font-family:sans-serif;">
-  <div id="box" style="font-size:100px; background:#444; width:200px; margin:20px auto; border:5px solid gold; border-radius:20px;">❓</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chaos Vendor</title>
+</head>
+<body style="margin:0;">
+
+<div style="text-align:center; background:#222; color:white; padding:50px; font-family:sans-serif; min-height:100vh;">
+  
+  <div id="box" style="font-size:100px; background:#444; width:200px; margin:20px auto; border:5px solid gold; border-radius:20px;">
+    ❓
+  </div>
+  
   <h2 id="msg">PUSH FOR CHAOS</h2>
-  <button style="padding:20px 40px; font-size:20px; cursor:pointer; background:red; color:white; border-radius:10px;" 
-    onclick="
-      const loot = [
-        {t:'A WHOLE TRAIN!', e:'🚂'},
-        {t:'A JET AIRPLANE!', e:'✈️'},
-        {t:'MUSTY SHOES', e:'👟'},
-        {t:'YELLOW MUSTARD', e:'🍯'},
-        {t:'A HUGE DICTIONARY', e:'📖'}
-      ];
-      const item = loot[Math.floor(Math.random()*loot.length)];
-      document.getElementById('box').innerText = item.e;
-      document.getElementById('msg').innerText = item.t;
-  ">VEND ITEM</button>
+  
+  <button 
+    style="padding:20px 40px; font-size:20px; cursor:pointer; background:red; color:white; border:none; border-radius:10px;"
+    onclick="vendItem()"
+  >
+    VEND ITEM
+  </button>
+
 </div>
+
+<script>
+function vendItem() {
+  const loot = [
+    {t:'A WHOLE TRAIN!', e:'🚂'},
+    {t:'A JET AIRPLANE!', e:'✈️'},
+    {t:'MUSTY SHOES', e:'👟'},
+    {t:'YELLOW MUSTARD', e:'🍯'},
+    {t:'A HUGE DICTIONARY', e:'📖'}
+  ];
+
+  const item = loot[Math.floor(Math.random() * loot.length)];
+
+  document.getElementById('box').innerText = item.e;
+  document.getElementById('msg').innerText = item.t;
+}
+</script>
+
+</body>
+</html>
