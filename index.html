@@ -1,34 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Chaos Machine</title>
-    <style>
-        body { text-align: center; background: #1a1a1a; color: white; font-family: sans-serif; padding-top: 50px; }
-        #screen { font-size: 80px; height: 120px; background: #333; width: 200px; margin: 20px auto; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 4px solid gold; }
-        #label { font-family: monospace; color: #0f0; margin-bottom: 20px; font-size: 20px; min-height: 24px; }
-        button { padding: 20px 40px; font-size: 20px; cursor: pointer; background: #d32f2f; color: white; border: none; border-radius: 50px; box-shadow: 0 5px #900; }
-        button:active { box-shadow: 0 2px #900; transform: translateY(3px); }
-    </style>
-</head>
-<body>
-
-    <h1>Vending Machine</h1>
-    <div id="label">INSERT COIN</div>
-    <div id="screen">❓</div>
-    <br>
-    
-    <button onclick="
-        const items = [
-            {n:'A MASSIVE TRAIN', e:'🚂'},
-            {n:'A BOEING 747', e:'✈️'},
-            {n:'SMELLY SHOES', e:'👟'},
-            {n:'YELLOW MUSTARD', e:'🍯'},
-            {n:'A BIG DICTIONARY', e:'📖'}
-        ];
-        const choice = items[Math.floor(Math.random() * items.length)];
-        document.getElementById('label').innerText = choice.n;
-        document.getElementById('screen').innerText = choice.e;
-    ">PUSH FOR CHAOS</button>
-
-</body>
-</html>
+<div style="text-align:center; background:#222; color:white; padding:50px; font-family:sans-serif;">
+  <div id="box" style="font-size:100px; background:#444; width:200px; margin:20px auto; border:5px solid gold; border-radius:20px;">❓</div>
+  <h2 id="msg">PUSH FOR CHAOS</h2>
+  <button style="padding:20px 40px; font-size:20px; cursor:pointer; background:red; color:white; border-radius:10px;" 
+    onclick="
+      const loot = [
+        {t:'A WHOLE TRAIN!', e:'🚂'},
+        {t:'A JET AIRPLANE!', e:'✈️'},
+        {t:'MUSTY SHOES', e:'👟'},
+        {t:'YELLOW MUSTARD', e:'🍯'},
+        {t:'A HUGE DICTIONARY', e:'📖'}
+      ];
+      const item = loot[Math.floor(Math.random()*loot.length)];
+      document.getElementById('box').innerText = item.e;
+      document.getElementById('msg').innerText = item.t;
+  ">VEND ITEM</button>
+</div>
